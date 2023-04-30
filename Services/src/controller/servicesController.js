@@ -28,16 +28,19 @@ const createService = async (req, res) => {
         if (checkServiceName) return res.status(409).send({ status: false, message: "service name  already exist" })
 
         if (!files || files.length == 0) return res.status(400).send({ status: false, message: "Please upload Service Image" })
-           if (files.length > 0) {
-      if (validation.isValidImage(files))
-        return res
-          .status(400)
-          .send({ status: false, message: "Enter a valid image file" });
-      let fileWithNewId = files[0];
-      fileWithNewId = { ...fileWithNewId, id: uuidV4() };
-      let uploadedServiceImage = await aws.uploadFile(fileWithNewId);
-      data.coverImage =uploadedServiceImage  ;
-        }
+     if (files.length > 0) {
+  if (validation.isValidImage(files))
+    return res
+      .status(400)
+      .send({ status: false, message: "Enter a valid image file" });
+
+  let fileWithNewId = files[0];
+  fileWithNewId = { ...fileWithNewId, id: uuidV4() };
+
+  let uploadedServiceImage = await uploadFile(fileWithNewId);
+
+  data.coverImage = uploadedServiceImage;
+}
         
         const createServices = await serviceModel.create(data)
 
