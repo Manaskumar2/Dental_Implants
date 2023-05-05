@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken")
-const postModel = require("../models/postModel")
 
 
 

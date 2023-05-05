@@ -1,5 +1,5 @@
  const adminModel = require("../model/adminModel")
-const validation = require("../validation/validaton") 
+const validation = require("../validation/validation") 
 const cache = require('memory-cache');
 const jwt = require('jsonwebtoken')
 const bcrypt = require("bcryptjs")
