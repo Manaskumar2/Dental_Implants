@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./GallerySection.css";
+import {useRecoilValue } from 'recoil';
+import { AuthState } from "../../atoms/authState";
+
 
 const Gallery = () => {
+  const authdata = useRecoilValue(AuthState)
+  const token = authdata?.token
   const [images, setImages] = useState([]);
   const [activeImage, setActiveImage] = useState(null);
 
@@ -14,18 +19,22 @@ const Gallery = () => {
     setActiveImage(null);
   };
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await axios.get("http://localhost:8000/api/photos");
-        setImages(response.data);
-      } catch (error) {
-        console.error("Error fetching images:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchImages = async () => {
+  //     try {
+  //       const response = await axios.post(`${import.meta.env.VITE_API_URL}/getPhotos`, {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`
+  //         }
+  //       });
+  //       setImages(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching images:", error);
+  //     }
+  //   };
 
-    fetchImages();
-  }, []);
+  //   fetchImages();
+  // }, []);
 
   return (
     <div className="gallery">

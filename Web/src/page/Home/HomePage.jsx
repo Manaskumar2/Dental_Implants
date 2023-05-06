@@ -1,6 +1,4 @@
 import { CardSection, CarePage, Customers, Footer, GallerySection, HeroSection, MainContact, MeetDoctors, Navbar, ServicesSection } from "../../components/ComponentExport";
-
-
 const HomePage = () => {
 
   return (
