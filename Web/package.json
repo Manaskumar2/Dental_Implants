@@ -18,10 +18,20 @@
     "react-router-dom": "^6.11.1",
     "recoil": "^0.7.7"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "ignorePatterns": [
+      "src/*",
+      "!src/test.js"
+    ]
+  },
   "devDependencies": {
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.40.0",
+    "eslint-config-react-app": "^7.0.1",
     "vite": "^4.3.2",
     "vite-plugin-eslint": "^1.8.1"
   }
