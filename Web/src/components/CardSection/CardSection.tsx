@@ -13,7 +13,7 @@ const CardSection = () => {
     </a>
    </div>
   </section>
- );
+ ); 
 };
 
 export default CardSection;
