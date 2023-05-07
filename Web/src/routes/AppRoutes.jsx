@@ -1,7 +1,7 @@
 
 import React, { Suspense } from "react";
 import {Route, Routes } from "react-router-dom";
-import {HomePage, Services, ServicesPost} from "./importPages";
+import {Gallery, HomePage, Services, ServicesPost} from "./importPages";
 
 export const AppRoutes = () => {
   return (
@@ -21,6 +21,16 @@ export const AppRoutes = () => {
         </Suspense>
       }
       />
+
+      <Route path="/gallery" element={
+        <Suspense>
+          <Gallery />
+        </Suspense>
+      }
+      />
+
+
+
 
       <Route path="/services/:slug" element={
         <Suspense>

@@ -1,4 +1,5 @@
 import "./MeetDoctors.css";
+import FemaleDoctor from "../../assets/FemaleDoctor.jpg";
 
 const MeetDoctors = () => {
     return (
@@ -19,7 +20,7 @@ const MeetDoctors = () => {
                             causes which lead to tooth pain and provides relief to his
                             patients through root canal treatments and other
                             procedures. He harbours a keen interest in the fields of
-                            endontics, cosmetic dentistry and restorative dentistry
+                            endontics, cosmetic dentistry and restorative dentistry.
                         </p>
                         <button className="doctor-card-button">READ MORE &rarr;</button>
                     </div>
@@ -30,13 +31,10 @@ const MeetDoctors = () => {
                         <img src="https://boost-content-cdn.s3.ap-south-1.amazonaws.com/CustomPages/Images/537ea6a6.jpg" alt="" />
                     </div>
                     <div className='doctorContent'>
-                        <h2 className="doctor-card-title" >Dr. Rohit Bansal</h2>
-                        <p className="doctor-card-description">Dr. Rohit Bansal is an endodontist who specialises in root
-                            canal treatments. He deals with the diagnosis of complex
-                            causes which lead to tooth pain and provides relief to his
-                            patients through root canal treatments and other
-                            procedures. He harbours a keen interest in the fields of
-                            endontics, cosmetic dentistry and restorative dentistry
+                        <h2 className="doctor-card-title" >Dr. Aanchal Bansal</h2>
+                        <p className="doctor-card-description">Dr. Aanchal Bansal is a very efficient prosthodonist and 
+                            implantologist. She specialises in giving a fresh form and function to the new teeth which replaces 
+                            the old ones which get lost due to various dental problems. This is called the rehabilitation of teeth.
                         </p>
                         <button className="doctor-card-button">READ MORE &rarr;</button>
                     </div>

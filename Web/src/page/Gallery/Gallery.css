@@ -1,31 +1,3 @@
-.meet-doctors {
-	text-align: center;
-	margin-top: 2rem;
-}
-
-.meet-doctors::after {
-	content: "";
-	display: block;
-	width: 100px;
-	height: 3px;
-	background-color: var(--button-primary-background);
-	margin: 0 auto;
-	margin-bottom: 10px;
-	border-radius: 20px;
-}
-
-.meet-doctors-subtitle {
-	font-size: 1.2rem;
-	color: #444;
-	text-align: center;
-	width: 60vw;
-	margin: 0 auto;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-}
-
-
-
 .gallery {
 	/* display: flex; */
 	/* flex-wrap: wrap; */
@@ -113,32 +85,6 @@
 }
 
 
-
-.btn-container {
-	text-align: center;
-}
-
-.all-services-button {
-	display: inline-block;
-	background-color: var(--button-primary-background);
-	color: var(--button-primary-text);
-	padding: 0.5rem 2rem;
-	border-radius: 40px;
-	text-decoration: none;
-	text-transform: uppercase;
-	transition: background-color 0.3s ease;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-}
-
-
-.all-services-button:hover {
-	background-color: #000;
-	color: #fff;
-}
-
-
-
 @media (max-width: 768px) {
 	.gallery-item {
 		width: calc(50% - 10px);
@@ -148,9 +94,7 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.btn-container {
-		margin-top: 2rem;
-	}
+	
 }
 
 @media (max-width: 576px) {

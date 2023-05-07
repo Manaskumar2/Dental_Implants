@@ -70,7 +70,7 @@ const ServicesSection = () => {
       <Link to={`/services`}>
         <div className='btn-container'>
           <a href='#' className='all-services-button'>
-            view all services
+            View all Services
           </a>
         </div>
       </Link>

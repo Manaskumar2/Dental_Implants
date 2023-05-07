@@ -8,6 +8,7 @@ import HeroSection from "./HeroSection/HeroSection";
 import MeetDoctors from "./MeetDoctors/MeetDoctors";
 import Navbar from "./Navbar/Navbar";
 import ServicesSection from "./ServicesSection/ServicesSection";
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
 export {
   CardSection,
@@ -19,5 +20,6 @@ export {
   HeroSection,
   MeetDoctors,
   Navbar,
-  ServicesSection
+  ServicesSection,
+  ScrollToTop,
 };

@@ -24,7 +24,7 @@ function ContactCard() {
             <div className='first-row'>
                 <div className="half input-row">
                     <BsPerson className="icon" />
-                    <input type="text" value={name} placeholder='your name' onChange={(e) => setName(e.target.value)} />
+                    <input type="text" value={name} placeholder='Your name' onChange={(e) => setName(e.target.value)} style={{ textTransform: 'none' }} />
                 </div>
                 <div className="half input-row">
                     <FiPhoneCall className="icon" />
@@ -33,11 +33,11 @@ function ContactCard() {
             </div>
             <div className="input-row">
                 <MdOutlineEmail className="icon" />
-                <input type="email" value={email} id="input-field" placeholder='Email Id' onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" value={email} id="input-field" placeholder='Email Id' onChange={(e) => setEmail(e.target.value)} style={{ textTransform: 'none' }} />
             </div>
             <div className="input-row">
                 <TfiCommentAlt className="icon" />
-                <textarea value={comment} placeholder='Comment' onChange={(e) => setComment(e.target.value)} />
+                <textarea value={comment} placeholder='Comment' onChange={(e) => setComment(e.target.value)} style={{ textTransform: 'none' }} />
             </div>
             <div className="input-row">
                 <button type="submit">SUBMIT</button>

@@ -14,8 +14,9 @@ const CardSection = () => {
         <h2 className='card-header'>Globedent Dental Spa</h2>
         <div className='card-hr'></div>
         <p className='card-text'>
-          Globodent Dental Spa is owned and run by Dr. Aanchal Bansal and Dr. Rohit Bansal. It is one of the fastest growing and most reliable dental facilities based out of South Delhi.
+          Globodent Dental Spa is owned and run by <span className="font-bold">Dr. Aanchal Bansal</span> and <span className="font-bold">Dr. Rohit Bansal</span>. It is one of the fastest growing and most reliable dental facilities based out of South Delhi.
         </p>
+
         {showMore ? (
           <div className='more-text'>
             <p>
