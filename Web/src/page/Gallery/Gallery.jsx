@@ -24,7 +24,6 @@ function Gallery() {
     }
   `).then((data) => {
             setImages(data);
-            console.log(data)
         }).catch(console.error);
     }, []);
 

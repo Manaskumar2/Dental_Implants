@@ -4,6 +4,7 @@ import { BsPerson } from 'react-icons/bs'
 import { FiPhoneCall } from 'react-icons/fi'
 import { MdOutlineEmail } from 'react-icons/md'
 import { TfiCommentAlt } from 'react-icons/tfi'
+import axios from 'axios';
 
 function ContactCard() {
     const [name, setName] = useState('');
@@ -11,10 +12,20 @@ function ContactCard() {
     const [email, setEmail] = useState('');
     const [comment, setComment] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(`Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nComment: ${comment}`);
-    }
+        try {
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/createAppontments`, {
+                name,
+                phone,
+                email,
+                comment,
+            });
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     return (
         <form onSubmit={handleSubmit} className="contact-card">

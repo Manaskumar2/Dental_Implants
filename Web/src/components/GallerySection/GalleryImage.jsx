@@ -27,12 +27,10 @@ const Gallery = () => {
     }
   `).then((data) => {
       setImages(data);
-      console.log(data)
     }).catch(console.error);
   }, []);
 
   const displayedImages = images.slice(0, 6); // Display only the first six images
-  console.log(displayedImages)
 
   
 

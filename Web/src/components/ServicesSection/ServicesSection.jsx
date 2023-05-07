@@ -23,13 +23,11 @@ const ServicesSection = () => {
       } | order(publishedAt desc)
     `).then((data) => {
       setServiceCard(data)
-      console.log(data)
     })
       .catch(console.error);
   }, [])
 
   const displayedCards = ServiceCard.slice(0, 3); // Display only the first three cards
-  console.log(displayedCards)
 
   return (
     <>

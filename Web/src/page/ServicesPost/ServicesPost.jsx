@@ -24,7 +24,6 @@ function ServicesPost() {
       } 
     `).then((data) => {
             setCardDetails(data[0])
-            console.log(data)
         })
             .catch(console.error);
     }, [slug])
