@@ -148,9 +148,6 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.btn-container {
-		margin-top: 2rem;
-	}
 }
 
 @media (max-width: 576px) {
