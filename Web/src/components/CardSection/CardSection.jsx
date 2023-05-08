@@ -24,9 +24,9 @@ const CardSection = () => {
             </p>
           </div>
         ) : (
-          <a href='#' className='card-read-me-button' onClick={handleReadMore}>
+          <button className='card-read-me-button' onClick={handleReadMore}>
             Read More
-          </a>
+          </button>
         )}
       </div>
     </section>

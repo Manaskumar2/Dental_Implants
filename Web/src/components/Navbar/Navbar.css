@@ -8,6 +8,7 @@
 	padding: 0.5rem;
 	z-index: 10;
 	height: auto;
+	border: 2px solid #579BB1;
   }
   
   .navbar-nav {
@@ -39,7 +40,7 @@
 	padding: 0.5rem 2rem;
   }
   
-  .nav-item.phone a {
+  .nav-item.phone button  {
 	color: #fff;
   }
   
@@ -54,7 +55,7 @@
 	padding: 0.5rem 2rem;
   }
   
-  .nav-item.book a {
+  .nav-item.book button {
 	color: #fff;
 	font-size: 0.9rem;
   }

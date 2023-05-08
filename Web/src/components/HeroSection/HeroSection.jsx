@@ -25,9 +25,9 @@ const HeroSection = () => {
       <div className='hero-content'>
         <h1 className='hero-header'>Dental Implants</h1>
         <p className='hero-subtitle'>Full Mouth Rehabilitation is also known as Full Mouth Restoration or Full Mouth Reconstruction.</p>
-        <a href='#' className='hero-read-more-button'>
+        <button  className='hero-read-more-button'>
           Read More &rarr;
-        </a>
+        </button>
       </div>
       <div className='arrow-buttons'>
         <button className='previous-button' onClick={handlePrevious}>&#8249;</button>

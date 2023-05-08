@@ -1,43 +1,57 @@
 import React from 'react';
 import './Navbar.css';
+import {useNavigate } from "react-router";
 
-const links = [
-  {
-    text: "Home",
-    url: "#home",
-  },
-  {
-    text: "Services",
-    url: "#services",
-  },
-  {
-    text: "Contact",
-    url: "#contact",
-  },
-];
+
+
 
 function Navbar() {
+
+  const navigate = useNavigate();
+  
+  const navigateToHome = () => {
+    if (window.location.pathname === '/') {
+      window.location.reload();
+    } else {
+      navigate('/');
+    }
+  };
+
+  const navigateToServices = () => {
+    navigate("/services");
+  }
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+  };
 
   
   return (
     <nav className='navbar'>
       <ul className='navbar-nav'>
-        {links.map((link) => (
-          <li className='nav-item' key={link.text}>
-            <a href={link.url} className='nav-link'>
-              {link.text}
-            </a>
+          <li className='nav-item' >
+          <div className='nav-link' onClick={navigateToHome}>
+              Home
+            </div>
           </li>
-        ))}
-        {/* <li className='nav-item phone'>
-          <a href='#' className='nav-link'>
-            +91-9855579 &nbsp;244
-          </a>
-        </li> */}
+          <li className='nav-item'>
+          <div className='nav-link' onClick={navigateToServices}>
+              Services
+            </div>
+          </li>
+        <li className='nav-item'>
+          <div className='nav-link' onClick={scrollToBottom}>
+            Contact
+          </div>
+        </li>
+        
         <li className='nav-item book'>
-          <a href='#' className='nav-link'>
+          <button className='nav-link' onClick={scrollToBottom}>
             Book an Appointment
-          </a>
+          </button>
         </li>
       </ul>
     </nav>

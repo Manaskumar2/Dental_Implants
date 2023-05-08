@@ -56,9 +56,9 @@ const ServicesSection = () => {
                 <p className="card-description leading-relaxed">
                   {`${ServicesCard.body[0].children[0].text.substring(0, 140)}...`}
                 </p>
-                <a href="#" className="card-button">
+                <button  className="card-button">
                   Read More &rarr;
-                </a>
+                </button>
               </div>
             </div>
           </Link>
@@ -67,9 +67,9 @@ const ServicesSection = () => {
 
       <Link to={`/services`}>
         <div className='btn-container'>
-          <a href='#' className='all-services-button'>
+          <button  className='all-services-button'>
             View all Services
-          </a>
+          </button>
         </div>
       </Link>
       

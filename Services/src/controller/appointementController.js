@@ -6,8 +6,8 @@ const nodemailer = require('nodemailer')
 const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'admin_email_address',
-        pass: 'admin_email_password'
+        user: 'rafeeqsyedamjad@gmail.com',
+        pass: 'ahmedsa123456A@'
     }
 });
 
@@ -30,7 +30,7 @@ const transporter = nodemailer.createTransport({
 
 
         const userMailOptions = {
-            from: 'admin_email_address',
+            from: 'rafeeqsyedamjad@gmail.com',
             to: data.email,
             subject: 'Appointment Confirmation',
             html: `
@@ -50,8 +50,8 @@ const transporter = nodemailer.createTransport({
 
         // send email notification with appointment details to admin
         const adminMailOptions = {
-            from: 'admin_email_address',
-            to: 'admin_email_address',
+            from: 'rafeeqsyedamjad@gmail.com',
+            to: 'rafeeqsyedamjad@gmail.com',
             subject: 'New Appointment Created',
             html: `
                 <p>A new appointment has been created:</p>

@@ -1,56 +1,62 @@
+import { useEffect, useState } from "react";
 import "./Customer.css";
-const customers = [
- {
-  img: "",
-  name: "Ranbir Singh",
-  id: 1,
- },
- {
-  img: "",
-  name: "Durga Bahadur Acharya",
-  id: 2,
- },
- {
-  img: "",
-  name: "Manish Yadav",
-  id: 3,
- },
-];
+import { client } from "../../lib/client";
+
 
 const Customers = () => {
- return (
-  <div className='customer-section'>
-   <div className='customer-header'>
-    <h2>Our Happy Customers</h2>
-   </div>
 
-   <p className='customer-subtitle'>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fugit dignissimos quae veniam debitis hic, deserunt ipsam ut distinctio libero earum quaerat non perferendis cupiditate,
-    eligendi autem, optio sed magnam!
-   </p>
+    const [reviews, setReviews] = useState([]);
 
-   <div className='customer-card-container'>
-    {customers.map((customer) => {
-     return (
-      <div className='customer-card' key={customer.id}>
-       <div className='customer-card__image'>
-        <img src='https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZGVudGFsfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='' />
-       </div>
+    useEffect(() => {
+        client.fetch(`
+        *[_type == "reviews"] {
+          "imageUrl":image.asset->url,
+          title,
+          description,
+        }
+      `).then((data) => {
+            setReviews(data);
+        }).catch(console.error);
+    }, []);
 
-       <div className='customer-title'>
-        <h3>{customer.name}</h3>
-       </div>
+    const displayedReviews = reviews.slice(0, 3); // Display only the first six images
 
-       <div className='customer-review'>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam ut vero distinctio molestias minus debitis voluptas voluptate illum rem! Incidunt maiores cumque blanditiis aspernatur commodi
-        mollitia qui, omnis provident doloremque quisquam impedit debitis eaque voluptates, perferendis soluta nesciunt laudantium ipsum atque? Quas facere officiis voluptatem. Ipsam reprehenderit
-       </div>
-      </div>
-     );
-    })}
-   </div>
-  </div>
- );
+
+    return (
+        <div className="customer-section">
+            <div className="customer-header">
+                <h2>Our Happy Customers</h2>
+            </div>
+
+            <p className="customer-subtitle">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+                fugit dignissimos quae veniam debitis hic, deserunt ipsam ut distinctio
+                libero earum quaerat non perferendis cupiditate, eligendi autem, optio
+                sed magnam!
+            </p>
+
+            <div className="customer-card-container">
+                {displayedReviews.map((review) => {
+                    return (
+                        <div className="customer-card" key={review._id}>
+                            <div className="customer-card__image">
+                                <img
+                                    src={review.imageUrl}
+                                    alt={review.title}
+                                />
+                            </div>
+
+                            <div className="customer-title">
+                                <h3>{review.title}</h3>
+                            </div>
+
+                            <div className="customer-review">{review.description}</div>
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+    );
 };
 
 export default Customers;

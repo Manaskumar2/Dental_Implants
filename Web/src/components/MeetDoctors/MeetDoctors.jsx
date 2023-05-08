@@ -1,7 +1,10 @@
+import { useState } from "react";
 import "./MeetDoctors.css";
-import FemaleDoctor from "../../assets/FemaleDoctor.jpg";
+import DoctorPopup from "./DoctorPopup";
 
 const MeetDoctors = () => {
+    const [showPopup, setShowPopup] = useState(false);
+
     return (
         <>
             <div className='meet-doctors'>
@@ -22,7 +25,7 @@ const MeetDoctors = () => {
                             procedures. He harbours a keen interest in the fields of
                             endontics, cosmetic dentistry and restorative dentistry.
                         </p>
-                        <button className="doctor-card-button">READ MORE &rarr;</button>
+                        <button className="doctor-card-button" onClick={() => setShowPopup(true)}>READ MORE &rarr;</button>
                     </div>
                 </div>
 
@@ -40,6 +43,9 @@ const MeetDoctors = () => {
                     </div>
                 </div>
             </div>
+
+
+
         </>
     );
 };

@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { client } from "../../lib/client"
+import { Footer, MainContact, Navbar } from '../../components/ComponentExport';
 
 
 
@@ -30,7 +31,8 @@ function Services() {
   }, [])
   return (
     <>
-      <div className="max-w-7xl px-5 mx-auto mb-10 mt-10">
+      <Navbar/>
+      <div className="max-w-7xl px-5 mx-auto mb-10 mt-10 bg-[#fff]">
         <h1 className="text-4xl lg:text-6xl mb-6 capitalize">All Services</h1>
       </div>
       <section className="px-5 2xl:max-w-7xl 2xl:mx-auto">
@@ -57,11 +59,13 @@ function Services() {
           ))}
         </div>
       </section>
-      <div className="max-w-7xl mx-auto px-5 mb-20 py-8 flex items-end rounded justify-end">
+      <div className="max-w-7xl mx-auto px-5 mb-5 py-8 flex items-end rounded justify-end">
         <Link to="/" className="bg-black py-2 px-8  rounded text-white tracking-wide hover:opacity-75 tranistion-all duration-200">
               Back to Homepage
             </Link>
       </div>
+      <MainContact />
+      <Footer />
     </>
   )
 }

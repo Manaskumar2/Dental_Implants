@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import "./GallerySection.css";
 import { client } from "../../lib/client";
 import { Link } from "react-router-dom";
@@ -64,9 +63,9 @@ const Gallery = () => {
 
       <Link to={`/gallery`}>
         <div className='btn-container'>
-          <a href='#' className='all-services-button'>
+          <button  className='all-services-button'>
             View all Photos
-          </a>
+          </button>
         </div>
       </Link>
     </div>
