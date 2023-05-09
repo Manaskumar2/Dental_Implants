@@ -5,6 +5,18 @@ import { FiPhoneCall } from 'react-icons/fi'
 import { MdOutlineEmail } from 'react-icons/md'
 import { TfiCommentAlt } from 'react-icons/tfi'
 import axios from 'axios';
+import { toast } from "react-hot-toast";
+
+export const toastProps = {
+    position: "top-center",
+    duration: 2000,
+    style: {
+        fontSize: "1.2rem",
+        background: "#333",
+        color: "#fff",
+    },
+};
+
 
 function ContactCard() {
     const [name, setName] = useState('');
@@ -21,9 +33,14 @@ function ContactCard() {
                 email,
                 comment,
             });
-            console.log(response.data);
+            console.log(response);
+            if(response.status===200){
+                toast.success("Appointment Created Succesfully",toastProps);
+                return response;
+            }
         } catch (error) {
-            console.error(error);
+            toast.error(error, toastProps);
+            return;
         }
     };
 
