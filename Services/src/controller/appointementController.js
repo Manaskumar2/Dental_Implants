@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// create post API endpoint
+
 const createAppointement = async (req, res) => {
   try {
     const data = req.body;
@@ -22,6 +22,7 @@ const createAppointement = async (req, res) => {
     if (!validation.isValidPhone(phone)) return res.status(400).send({ status: false, message: "please enter valid phone number" });
     if (!name) return res.status(400).send({ status: false, message: "please enter your name" });
     if (!validation.isValidName(name)) return res.status(400).send({ status: false, message: "please enter valid name" });
+    
 
     const userMailOptions = {
       from: 'manaskumarjena',

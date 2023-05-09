@@ -1,7 +1,6 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const route = require("./routes/route");
-const admin = require("./routes/adminRoute")
 const app = express();
 const cors = require('cors')
 
@@ -26,8 +25,6 @@ let PORT = process.env.PORT;
 
 
 app.use("/api", route);
-app.use("/api/admin", admin);
-
 app.use((req, res, next) => {
   const error = new Error("Path not found.");
   error.status = 404;

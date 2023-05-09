@@ -6,11 +6,4 @@ const { createAppointement } = require("../controller/appointementController");
 router.post ("/createAppontments",createAppointement)
 
 
-
-
-
-
-
-
-
 module.exports =router
