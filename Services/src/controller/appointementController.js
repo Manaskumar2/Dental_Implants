@@ -5,12 +5,12 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'manaskumarjena700@gmail.com',
-    pass: 'ManasKumar@3758'
+    pass: 'pwupauplkptlgmvx'
   }
 });
 
 // create post API endpoint
-const createAppointment = async (req, res) => {
+const createAppointement = async (req, res) => {
   try {
     const data = req.body;
     const { email, phone, name, comment } = data;
@@ -67,4 +67,4 @@ const createAppointment = async (req, res) => {
   }
 };
 
-module.exports = { createAppointment };
+module.exports = { createAppointement };

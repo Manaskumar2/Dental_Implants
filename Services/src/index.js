@@ -2,7 +2,6 @@ const dotenv = require("dotenv");
 const express = require("express");
 const route = require("./routes/route");
 const admin = require("./routes/adminRoute")
-const mongoose = require("mongoose");
 const app = express();
 const cors = require('cors')
 
@@ -22,17 +21,8 @@ const upload = multer();
 app.use(upload.any());
 
 dotenv.config({ path: "./config.env" });
-let DATABASE = process.env.DATABASE;
 let PORT = process.env.PORT;
 
-mongoose.set("strictQuery", true);
-mongoose
-  .connect(DATABASE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("MongoDb is connected"))
-  .catch((err) => console.log(err));
 
 
 app.use("/api", route);

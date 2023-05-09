@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+
 
 const isValid = (value) => {
     if (typeof value === "undefined" || typeof value === "null") return false;
@@ -9,9 +9,7 @@ const isValid = (value) => {
 const isValidreqBody=(request)=>{
     return Object.keys(request).length>0
 }
-const isValidObjectId = (objectId) => {
-    return mongoose.Types.ObjectId.isValid(objectId);
-}
+
 const isValidName = (name) => {
     return /^[a-zA-Z\. ]*$/.test(name)
 }
@@ -44,4 +42,4 @@ let regexSpaceChar = function (attribute) {
 
 
 
-module.exports = { isValid, isValidPhone, isValidEmail, isValidPwd, isValidObjectId, isValidName,  isValidImage, isValidGender, isUrlValid,regexSpaceChar ,isValidreqBody}
+module.exports = { isValid, isValidPhone, isValidEmail, isValidPwd, isValidName,  isValidImage, isValidGender, isUrlValid,regexSpaceChar ,isValidreqBody}
