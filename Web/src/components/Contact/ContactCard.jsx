@@ -26,6 +26,16 @@ function ContactCard() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        // Check if the phone number is valid
+        const phoneRegex = /^[0-9]{10}$/; // Regular expression to match a 10-digit phone number
+        if (!phoneRegex.test(phone)) {
+            toast.error("Please enter a valid phone number", toastProps);
+            return;
+        }
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
+            toast.error("Please enter a valid email address", toastProps);
+            return;
+        }
         try {
             const response = await axios.post(`${import.meta.env.VITE_API_URL}/createAppontments`, {
                 name,
