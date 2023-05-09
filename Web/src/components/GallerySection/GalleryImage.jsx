@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import "./GallerySection.css";
+import { client } from "../../lib/client";
+import { Link } from "react-router-dom";
+
+
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -14,26 +17,29 @@ const Gallery = () => {
     setActiveImage(null);
   };
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await axios.get("http://localhost:8000/api/photos");
-        setImages(response.data);
-      } catch (error) {
-        console.error("Error fetching images:", error);
-      }
-    };
 
-    fetchImages();
+  useEffect(() => {
+    client.fetch(`
+    *[_type == "gallery"] {
+      title,
+      "imageUrl": image.asset->url
+    }
+  `).then((data) => {
+      setImages(data);
+    }).catch(console.error);
   }, []);
+
+  const displayedImages = images.slice(0, 6); // Display only the first six images
+
+  
 
   return (
     <div className="gallery">
-      {images.map((image) => (
+      {displayedImages.map((image) => (
         <div key={image.id} className="gallery-item">
           <img
-            src={image.src}
-            alt={image.alt}
+            src={image.imageUrl}
+            alt={image.title}
             onClick={() => handleImageClick(image.id)}
           />
           <div className="gallery-overlay">
@@ -50,6 +56,18 @@ const Gallery = () => {
           />
         </div>
       )}
+
+      <div>
+
+      </div>
+
+      <Link to={`/gallery`}>
+        <div className='btn-container'>
+          <button  className='all-services-button'>
+            View all Photos
+          </button>
+        </div>
+      </Link>
     </div>
   );
 };

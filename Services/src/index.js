@@ -1,9 +1,17 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const route = require("./routes/route");
-const admin = require("./routes/adminRoute")
-const mongoose = require("mongoose");
 const app = express();
+const cors = require('cors')
+
+
+app.use(
+  cors({
+    credentials: true,
+    origin: ["http://localhost:3000"],
+  })
+);
+
 
 const multer = require("multer");
 
@@ -12,22 +20,11 @@ const upload = multer();
 app.use(upload.any());
 
 dotenv.config({ path: "./config.env" });
-let DATABASE = process.env.DATABASE;
 let PORT = process.env.PORT;
 
-mongoose.set("strictQuery", true);
-mongoose
-  .connect(DATABASE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("MongoDb is connected"))
-  .catch((err) => console.log(err));
 
 
 app.use("/api", route);
-app.use("/api/admin", admin);
-
 app.use((req, res, next) => {
   const error = new Error("Path not found.");
   error.status = 404;

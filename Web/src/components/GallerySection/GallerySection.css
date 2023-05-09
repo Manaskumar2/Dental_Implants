@@ -112,6 +112,33 @@
 	cursor: pointer;
 }
 
+
+
+.btn-container {
+	text-align: center;
+}
+
+.all-services-button {
+	display: inline-block;
+	background-color: var(--button-primary-background);
+	color: var(--button-primary-text);
+	padding: 0.5rem 2rem;
+	border-radius: 40px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color 0.3s ease;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+
+.all-services-button:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+
+
 @media (max-width: 768px) {
 	.gallery-item {
 		width: calc(50% - 10px);
@@ -120,6 +147,7 @@
 	.gallery {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
 }
 
 @media (max-width: 576px) {

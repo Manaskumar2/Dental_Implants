@@ -2,6 +2,7 @@
 	margin-top: 2rem;
 	background-color: #1e77ab;
 	height: 300px;
+	
 }
 
 .services-header {
@@ -50,8 +51,6 @@
 
 .card-header img {
 	width: 100%;
-	height: auto;
-
 }
 
 .card-body {
@@ -114,19 +113,22 @@
 @media screen and (max-width: 768px) {
 	.services-section {
 		height: auto;
+		
 	}
 	.services-container {
 		grid-template-columns: 1fr;
 		width: 80vw;
 		margin-top: 0;
+		gap:1%;
 	}
 	.services-text {
 		width: 80%;
 	}
 	.card {
-		margin-bottom: 2rem;
+		margin-top: 3rem;
+		margin-bottom: 1rem;
 	}
 	.btn-container {
-		margin-top: 2rem;
+		margin-top: 4rem;
 	}
 }
