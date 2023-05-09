@@ -13,7 +13,8 @@ const transporter = nodemailer.createTransport({
 const createAppointement = async (req, res) => {
   try {
     const data = req.body;
-    const { email, phone, name, comment } = data;
+      const { email, phone, name, comment } = data;
+
 
     if (!email) return res.status(400).send({ status: false, message: "please enter your email" });
     if (!validation.isValidEmail(email)) return res.status(400).send({ status: false, message: "enter valid email" });
@@ -53,7 +54,6 @@ const createAppointement = async (req, res) => {
           <li>Name: ${data.name}</li>
           <li>Email: ${data.email}</li>
           <li>Phone: ${data.phone}</li>
-          <li>Date: ${data.createdAt}</li>
         </ul>
       `
     };

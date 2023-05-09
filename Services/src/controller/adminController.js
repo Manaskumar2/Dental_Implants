@@ -14,7 +14,7 @@ const signUp = async (req, res) => {
 
         let { name, email, password, confirmPassword } = data
 
-        if (validation.isValidBody(data)) return res.status(400).send({ status: false, message: "provide all required fields" })
+        if (!validation.isValidreqBody(data)) return res.status(400).send({ status: false, message: "provide all required fields" })
 
         if (!validation.isValid(name)) return res.status(400).send({ status: false, message: `Username is Required` });
         if (!validation.isValidName(name)) return res.status(400).send({ status: false, message: "please enter a valid name" })
@@ -46,7 +46,7 @@ const signIn = async (req, res) => {
             let data = req.body
             let { email, password } = data
     
-            if (validation.isValidBody(data)) return res.status(400).send({ status: false, msg: "provide all  details to login" })
+            if (!validation.isValidreqBody(data)) return res.status(400).send({ status: false, msg: "provide all  details to login" })
     
             if (!validation.isValid(email)) return res.status(400).send({ status: false, message: "email is required" })
             email = email.toLowerCase()
