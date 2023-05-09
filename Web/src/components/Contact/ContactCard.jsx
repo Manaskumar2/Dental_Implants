@@ -36,6 +36,10 @@ function ContactCard() {
             console.log(response);
             if(response.status===200){
                 toast.success("Appointment Created Succesfully",toastProps);
+                setName('');
+                setPhone('');
+                setEmail('');
+                setComment('');
                 return response;
             }
         } catch (error) {
