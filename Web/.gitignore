@@ -1,4 +1,4 @@
 /node_modules
 /dist
+/dental/node_modules
 
-.package-lock.json
